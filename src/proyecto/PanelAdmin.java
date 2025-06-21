@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 import static proyecto.ListaUsers.*;
 import static proyecto.login.Plog;
 import static proyecto.login.loginPanel;
@@ -93,6 +94,17 @@ public class PanelAdmin extends javax.swing.JPanel {
         nuevoTipo = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
         btnEditComida = new javax.swing.JButton();
+        MostrarUser = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblUser = new javax.swing.JTable();
+        Mennus = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblBebidas = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblComida = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblPostres = new javax.swing.JTable();
+        btnaTRAS = new javax.swing.JLabel();
         ContendorMenus = new javax.swing.JPanel();
         btnCerrarSesion = new javax.swing.JButton();
         labelComida = new javax.swing.JLabel();
@@ -446,9 +458,7 @@ public class PanelAdmin extends javax.swing.JPanel {
                 .addGap(24, 24, 24)
                 .addGroup(comidaEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
-                    .addGroup(comidaEditLayout.createSequentialGroup()
-                        .addComponent(bnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)))
+                    .addComponent(bnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(buscarbtn)
                 .addContainerGap())
@@ -470,6 +480,76 @@ public class PanelAdmin extends javax.swing.JPanel {
                 .addComponent(buscarcont, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
+
+        tblUser.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][] {},
+            new String[] {
+                "Nombre completo", "Usuario", "Contraseña"
+            }
+        ) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        });
+        jScrollPane1.setViewportView(tblUser);
+
+        javax.swing.GroupLayout MostrarUserLayout = new javax.swing.GroupLayout(MostrarUser.getContentPane());
+        MostrarUser.getContentPane().setLayout(MostrarUserLayout);
+        MostrarUserLayout.setHorizontalGroup(
+            MostrarUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MostrarUserLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+        MostrarUserLayout.setVerticalGroup(
+            MostrarUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MostrarUserLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        Mennus.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblBebidas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][][] {},
+            new String[] {
+                "ID","Nombre", "Precio"
+            }
+        ));
+        jScrollPane2.setViewportView(tblBebidas);
+
+        Mennus.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 340, -1));
+
+        tblComida.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][][] {},
+            new String[] {
+                "ID","Nombre", "Precio"
+            }
+        ));
+        jScrollPane3.setViewportView(tblComida);
+
+        Mennus.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 50, 340, -1));
+
+        tblPostres.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][][] {},
+            new String[] {
+                "ID","Nombre", "Precio"
+            }
+        ));
+        jScrollPane4.setViewportView(tblPostres);
+
+        Mennus.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 50, 340, -1));
+
+        btnaTRAS.setFont(new java.awt.Font("DejaVu Sans Condensed", 1, 18)); // NOI18N
+        btnaTRAS.setText("Atras");
+        btnaTRAS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnaTRASMousePressed(evt);
+            }
+        });
+        Mennus.getContentPane().add(btnaTRAS, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 70, 50));
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -696,7 +776,23 @@ public class PanelAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_exitUActionPerformed
 
     private void btnMostrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarMousePressed
-        // TODO add your handling code here:
+        
+        MostrarUser.setBounds(0, 0,572, 417);
+        MostrarUser.setModal(true);
+        DefaultTableModel model = (DefaultTableModel) tblUser.getModel();
+    model.setRowCount(0); // Limpia la tabla
+
+    for (Usuario usuario : ListaUsers.UsuariosLista) {
+        Object[] fila = {
+            
+            usuario.NombreCompleto,
+            usuario.Usuario,
+            usuario.Contraseña
+            
+        };
+        model.addRow(fila);
+    }
+    MostrarUser.setVisible(true);
     }//GEN-LAST:event_btnMostrarMousePressed
 
     private void registrarbuttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarbuttomActionPerformed
@@ -799,7 +895,46 @@ public class PanelAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEditar1MousePressed
 
     private void btnMostrar1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrar1MousePressed
-        // TODO add your handling code here:
+        
+        Mennus.setBounds(0, 0, 1210, 508);
+      
+    DefaultTableModel modelComida = (DefaultTableModel) tblComida.getModel();
+    DefaultTableModel modelBebida = (DefaultTableModel) tblBebidas.getModel();
+    DefaultTableModel modelPostre = (DefaultTableModel) tblPostres.getModel();
+
+        // Limpie las tablas
+        modelComida.setRowCount(0);
+        modelBebida.setRowCount(0);
+        modelPostre.setRowCount(0);
+
+    // Se rellena segun el tipo
+    for (Comida producto : ListaUsers.comidaList) {  
+        Object[] fila = {
+            producto.id,
+            producto.nombre,
+            producto.precio,
+           
+        };
+
+        switch (producto.tipo.toLowerCase()) {
+            case "comida":
+                modelComida.addRow(fila);
+                break;
+            case "bebida":
+                modelBebida.addRow(fila);
+                break;
+            case "postre":
+                modelPostre.addRow(fila);
+                break;
+            default:
+                
+    }
+}
+
+    Mennus.setVisible(true);
+
+        
+        
     }//GEN-LAST:event_btnMostrar1MousePressed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
@@ -859,12 +994,28 @@ public class PanelAdmin extends javax.swing.JPanel {
         j=-1;
     }//GEN-LAST:event_comidaEditWindowClosing
 
+    private void btnaTRASMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnaTRASMousePressed
+        Mennus.setVisible(false);
+        
+    }//GEN-LAST:event_btnaTRASMousePressed
+
+    
+    
+    public static void ocultarTBL(){
+    tblComida.setVisible(false);
+    tblBebidas.setVisible(false);
+    tblPostres.setVisible(false);
+    }
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Comidas;
     private javax.swing.JPanel ContendorMenus;
     private javax.swing.JDialog Edicion;
     private javax.swing.JLabel LOGO;
+    private javax.swing.JDialog Mennus;
+    private javax.swing.JDialog MostrarUser;
     private javax.swing.JDialog Registro;
     private javax.swing.JTextField bnombre;
     private javax.swing.JComboBox<String> boxTipo;
@@ -881,6 +1032,7 @@ public class PanelAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel btnEliminar1;
     private javax.swing.JLabel btnMostrar;
     private javax.swing.JLabel btnMostrar1;
+    private javax.swing.JLabel btnaTRAS;
     private javax.swing.JButton buscarbtn;
     private javax.swing.JPanel buscarcont;
     private javax.swing.JDialog comidaEdit;
@@ -905,6 +1057,10 @@ public class PanelAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    public static javax.swing.JScrollPane jScrollPane2;
+    public static javax.swing.JScrollPane jScrollPane3;
+    public static javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JLabel label3;
     private javax.swing.JLabel label4;
     private javax.swing.JLabel labelComida;
@@ -916,6 +1072,10 @@ public class PanelAdmin extends javax.swing.JPanel {
     private javax.swing.JTextField person;
     private javax.swing.JButton registrarbuttom;
     private javax.swing.JSpinner spinPrecio;
+    public static javax.swing.JTable tblBebidas;
+    public static javax.swing.JTable tblComida;
+    public static javax.swing.JTable tblPostres;
+    private javax.swing.JTable tblUser;
     private javax.swing.JSpinner textID;
     private javax.swing.JTextField textNombre;
     private javax.swing.JTextField user;

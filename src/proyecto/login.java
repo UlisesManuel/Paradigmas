@@ -220,7 +220,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().removeAll();
         getContentPane().add(panel);
         
-        panel.setBounds(0, 0, getWidth(), getHeight()); // Solo si usas layout null
+        panel.setBounds(0, 0, getWidth(), getHeight()); 
         panel.setVisible(true);
         revalidate();
         repaint();
@@ -228,11 +228,11 @@ public class login extends javax.swing.JFrame {
 // Si es un usuario normal registrado
     else if (ListaUsers.validarLogin(admin, contra)) {
         System.out.println("Bienvenido");
-        Menu m = new Menu();
+        Menu_1 m = new Menu_1();
 
         getContentPane().removeAll();
         getContentPane().add(m);
-        m.setBounds(0, 0, getWidth(), getHeight()); // Solo si usas layout null
+        m.setBounds(0, 0, getWidth(), getHeight()); 
         m.setVisible(true);
         revalidate();
         repaint();
