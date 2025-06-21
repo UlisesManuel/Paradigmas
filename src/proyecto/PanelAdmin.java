@@ -7,8 +7,12 @@ package proyecto;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import static proyecto.ListaUsers.*;
+import static proyecto.login.Plog;
+import static proyecto.login.loginPanel;
 
 /**
  *
@@ -17,6 +21,7 @@ import static proyecto.ListaUsers.*;
 public class PanelAdmin extends javax.swing.JPanel {
     
     //Atributos
+
     int i,j;
     login l=new login();
     
@@ -89,7 +94,7 @@ public class PanelAdmin extends javax.swing.JPanel {
         jLabel14 = new javax.swing.JLabel();
         btnEditComida = new javax.swing.JButton();
         ContendorMenus = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         labelComida = new javax.swing.JLabel();
         usuariosSub = new javax.swing.JPanel();
         btRegistro = new javax.swing.JLabel();
@@ -135,18 +140,14 @@ public class PanelAdmin extends javax.swing.JPanel {
             .addGroup(RegistroLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RegistroLayout.createSequentialGroup()
-                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(registrarbuttom)
-                            .addComponent(jLabel1)
-                            .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(RegistroLayout.createSequentialGroup()
-                        .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 258, Short.MAX_VALUE))))
+                    .addComponent(registrarbuttom)
+                    .addComponent(jLabel1)
+                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RegistroLayout.setVerticalGroup(
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -476,13 +477,13 @@ public class PanelAdmin extends javax.swing.JPanel {
         ContendorMenus.setForeground(new java.awt.Color(255, 204, 153));
         ContendorMenus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Cerrar Sesion");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCerrarSesion.setText("Cerrar Sesion");
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCerrarSesionActionPerformed(evt);
             }
         });
-        ContendorMenus.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, -1, -1));
+        ContendorMenus.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, -1, -1));
 
         labelComida.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         labelComida.setText("Alimentos");
@@ -658,15 +659,11 @@ public class PanelAdmin extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(ContendorMenus, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 12, Short.MAX_VALUE))
+            .addComponent(ContendorMenus, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(ContendorMenus, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(ContendorMenus, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -736,13 +733,27 @@ public class PanelAdmin extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEditActionPerformed
 
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setVisible(false);
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
         
-        //proyecto.login.Plog.setVisible(true);
+      
+       frame.getContentPane().removeAll();
+       frame.dispose(); // Cierra el actual
+       new login().setVisible(true);
+       
+//        frame.getContentPane().add(loginPanel);
+//        frame.getContentPane().setVisible(true);
+//        frame.revalidate();
+//        frame.repaint();
+//         
+//        this.removeAll();
+//        this.add(loginPanel);
+//        loginPanel.setVisible(true);
+//        revalidate();
+//        repaint();
+
         
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void EdicionWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_EdicionWindowClosing
         editNombre.setText("");
@@ -861,6 +872,7 @@ public class PanelAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel btRegistro1;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnEditComida;
     private javax.swing.JLabel btnEditar;
@@ -879,7 +891,6 @@ public class PanelAdmin extends javax.swing.JPanel {
     private javax.swing.JTextField editUser;
     private javax.swing.JButton exitU;
     private javax.swing.JButton exitU1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

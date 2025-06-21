@@ -26,7 +26,14 @@ public class ListaUsers  {
     }
     return -1;
     }
-    
+    public static boolean validarLogin(String usuario, String contraseña) {
+    for (Usuario u : UsuariosLista) {
+        if (u.getUsuario().equals(usuario) && u.getContraseña().equals(contraseña)) {
+            return true;
+        }
+    }
+    return false;
+}
     public static ArrayList<Comida> comidaList=new ArrayList <>();
     public static void nuevaComida(int id,String nombre,double precio,String tipo){
         comidaList.add(new Comida(id,nombre,precio,tipo));

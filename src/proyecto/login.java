@@ -75,6 +75,8 @@ public class login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
+        loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         Plog.setBackground(new java.awt.Color(255, 255, 255));
         Plog.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -87,19 +89,19 @@ public class login extends javax.swing.JFrame {
         PinicLogoLayout.setHorizontalGroup(
             PinicLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PinicLogoLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(33, 33, 33)
                 .addComponent(LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         PinicLogoLayout.setVerticalGroup(
             PinicLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PinicLogoLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(32, 32, 32)
                 .addComponent(LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
 
-        Plog.add(PinicLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, -10, -1, 581));
+        Plog.add(PinicLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, -10, 460, 581));
 
         lblUser.setFont(new java.awt.Font("Mingzat", 1, 18)); // NOI18N
         lblUser.setText("Usuario");
@@ -129,7 +131,7 @@ public class login extends javax.swing.JFrame {
         Plog.add(lblContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 121, 25));
 
         PinicioSesion.setBackground(new java.awt.Color(255, 204, 102));
-        PinicioSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PinicioSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PinicioSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PinicioSesionMouseEntered(evt);
@@ -144,7 +146,7 @@ public class login extends javax.swing.JFrame {
 
         lblint.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 1, 15)); // NOI18N
         lblint.setText("Iniciar Sesion");
-        lblint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblint.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblint.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblintMouseClicked(evt);
@@ -159,38 +161,24 @@ public class login extends javax.swing.JFrame {
         PinicioSesionLayout.setHorizontalGroup(
             PinicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PinicioSesionLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(25, 25, 25)
                 .addComponent(lblint)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         PinicioSesionLayout.setVerticalGroup(
             PinicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblint, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
         );
 
-        Plog.add(PinicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, -1));
+        Plog.add(PinicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
 
-        USER.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "administrador" }));
+        USER.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador" }));
         Plog.add(USER, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 300, 30));
 
-        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
-        loginPanel.setLayout(loginPanelLayout);
-        loginPanelLayout.setHorizontalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Plog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        loginPanelLayout.setVerticalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addComponent(Plog, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
-        );
+        loginPanel.add(Plog, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 844, 540));
 
         getContentPane().add(loginPanel);
-        loginPanel.setBounds(6, 6, 831, 519);
+        loginPanel.setBounds(-4, -4, 850, 540);
 
         setBounds(0, 0, 843, 568);
     }// </editor-fold>//GEN-END:initComponents
@@ -221,28 +209,38 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_PinicioSesionMouseExited
 
     private void PinicioSesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PinicioSesionMousePressed
-        String admin = "administrador";
-    String contra = "admin";
+    String admin = USER.getSelectedItem().toString();
+    String contra = String.valueOf(Contraseña.getPassword());
 
-    if (String.valueOf(Contraseña.getPassword()).equals(contra) && USER.getSelectedItem().toString().equals(admin)) {
-        
-        PanelAdmin menu = new PanelAdmin();
+// Si es el usuario administrador
+    if (contra.equals("admin") && admin.equals("administrador")) {
+        PanelAdmin panel = new PanelAdmin(); // Sustituye "OtroPanel" por el nombre de tu clase
 
-        // Quitar todo lo anterior
+
         getContentPane().removeAll();
+        getContentPane().add(panel);
         
-        // Añadir el nuevo panel
-        getContentPane().add(menu);
-        
-        // Ajustar tamaño y actualizar
-        menu.setBounds(0, 0, getWidth(), getHeight());
-        menu.setVisible(true);
-        
+        panel.setBounds(0, 0, getWidth(), getHeight()); // Solo si usas layout null
+        panel.setVisible(true);
+        revalidate();
+        repaint();
+    }
+// Si es un usuario normal registrado
+    else if (ListaUsers.validarLogin(admin, contra)) {
+        System.out.println("Bienvenido");
+        Menu m = new Menu();
+
+        getContentPane().removeAll();
+        getContentPane().add(m);
+        m.setBounds(0, 0, getWidth(), getHeight()); // Solo si usas layout null
+        m.setVisible(true);
         revalidate();
         repaint();
     } else {
-        System.out.println("no es mi usuario ni mi contra");
+        JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos");
     }
+
+    
         
     }//GEN-LAST:event_PinicioSesionMousePressed
 
