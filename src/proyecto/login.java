@@ -225,7 +225,7 @@ public class login extends javax.swing.JFrame {
         revalidate();
         repaint();
     }
-// Si es un usuario normal registrado
+
     else if (ListaUsers.validarLogin(admin, contra)) {
         System.out.println("Bienvenido");
         Menu_1 m = new Menu_1();

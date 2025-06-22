@@ -5,9 +5,14 @@
 package proyecto;
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import proyecto.Comida;
+import proyecto.ListaUsers;
+import static proyecto.ListaUsers.UsuariosLista;
 
 /**
  *
@@ -37,6 +42,10 @@ public class Menu_1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        DialogTicket = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtTicket = new javax.swing.JTextArea();
+        Atrasbtn = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DefaultTableModel modelo = new DefaultTableModel(
             new String[]{"Nombre", "Precio", ""}, 0
@@ -57,6 +66,35 @@ public class Menu_1 extends javax.swing.JPanel {
         totLabel = new javax.swing.JLabel();
         btnPedido = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+
+        txtTicket.setColumns(20);
+        txtTicket.setRows(5);
+        jScrollPane3.setViewportView(txtTicket);
+
+        javax.swing.GroupLayout DialogTicketLayout = new javax.swing.GroupLayout(DialogTicket.getContentPane());
+        DialogTicket.getContentPane().setLayout(DialogTicketLayout);
+        DialogTicketLayout.setHorizontalGroup(
+            DialogTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DialogTicketLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        DialogTicketLayout.setVerticalGroup(
+            DialogTicketLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DialogTicketLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
+        );
+
+        Atrasbtn.setText("Cerrar Sesion");
+        Atrasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                AtrasbtnMousePressed(evt);
+            }
+        });
 
         comTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object[][][] {},
@@ -102,9 +140,9 @@ public class Menu_1 extends javax.swing.JPanel {
         btnPedidoLayout.setHorizontalGroup(
             btnPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnPedidoLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         btnPedidoLayout.setVerticalGroup(
             btnPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,40 +152,51 @@ public class Menu_1 extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton1.setText("Pedidos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(23, 23, 23)
+                .addComponent(jButton1)
+                .addGap(126, 126, 126)
+                .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(totLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Atrasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(totLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(104, 104, 104))
+                .addGap(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(Atrasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                    .addComponent(totLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                        .addComponent(totLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton1))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -180,8 +229,20 @@ public class Menu_1 extends javax.swing.JPanel {
     }//GEN-LAST:event_pedTableMouseClicked
 
     private void btnPedidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoMousePressed
-      
+        DialogTicket.setBounds(0,0,371,460);
+        DialogTicket.setVisible(true);
+        txtTicket.setText(Ticket(pedTable));
+        
+//        modelpedTable.setRowCount(0);
     }//GEN-LAST:event_btnPedidoMousePressed
+
+    private void AtrasbtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AtrasbtnMousePressed
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        frame.getContentPane().removeAll();
+        frame.dispose(); // Cierra el actual
+        new login().setVisible(true);
+       
+    }//GEN-LAST:event_AtrasbtnMousePressed
 
     public void agregar(String nombre, Double precio) {
         DefaultTableModel modelo = (DefaultTableModel) pedTable.getModel();
@@ -207,14 +268,93 @@ public class Menu_1 extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this, "No hay comidas registradas todavía.");
     }
 }
+    
+    
+    public String Ticket(JTable pedTable) {
+    StringBuilder ticket = new StringBuilder();
+    double total = 0.0;
+
+    ticket.append("=== TICKET DE COMPRA ===\n\n");
+
+    DefaultTableModel model = (DefaultTableModel) pedTable.getModel();
+
+    // Listas para productos únicos
+    ArrayList<String> productos = new ArrayList<>();
+    ArrayList<Integer> cantidades = new ArrayList<>();
+    ArrayList<Double> subtotales = new ArrayList<>();
+
+    for (int i = 0; i < model.getRowCount(); i++) {
+        String producto = model.getValueAt(i, 0).toString();
+        double precio = Double.parseDouble(model.getValueAt(i, 1).toString());
+
+        if (productos.contains(producto)) {
+            int index = productos.indexOf(producto);
+            cantidades.set(index, cantidades.get(index) + 1);
+            subtotales.set(index, subtotales.get(index) + precio);
+        } else {
+            productos.add(producto);
+            cantidades.add(1);
+            subtotales.add(precio);
+        }
+    }
+
+    // Mostrar los productos agrupados
+    for (int i = 0; i < productos.size(); i++) {
+        String producto = productos.get(i);
+        int cantidad = cantidades.get(i);
+        double subtotal = subtotales.get(i);
+
+        ticket.append(String.format("%-15s x%-2d $%.2f\n", producto, cantidad, subtotal));
+        total += subtotal;
+    }
+
+    ticket.append("\n------------------------\n");
+    ticket.append(String.format("TOTAL:          $%.2f\n", total));
+    ticket.append("========================\n");
+
+    return ticket.toString();
+}
+
+//    public String Ticket(JTable pedTable)  {
+//    StringBuilder ticket = new StringBuilder();
+//    double total = 0.0;
+//
+//    
+//    
+//    ticket.append("=== TICKET DE COMPRA ===\n");
+//    
+//
+//    DefaultTableModel model = (DefaultTableModel) pedTable.getModel();
+//
+//    for (int i = 0; i < model.getRowCount(); i++) {
+//        String producto = model.getValueAt(i, 0).toString();
+//        double precio = Double.parseDouble(model.getValueAt(i, 1).toString());
+//
+//        ticket.append(String.format("%-20s $%.2f\n", producto, precio));
+//        total += precio;
+//    }
+//
+//    ticket.append("\n------------------------\n");
+//    ticket.append(String.format("TOTAL:          $%.2f\n", total));
+//    ticket.append("========================\n");
+//    
+//   return ticket.toString();
+//}
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Atrasbtn;
+    private javax.swing.JDialog DialogTicket;
     private javax.swing.JPanel btnPedido;
     private javax.swing.JTable comTable;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable pedTable;
     private javax.swing.JLabel totLabel;
+    private javax.swing.JTextArea txtTicket;
     // End of variables declaration//GEN-END:variables
 }
