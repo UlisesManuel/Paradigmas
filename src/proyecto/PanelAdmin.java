@@ -34,10 +34,12 @@ public class PanelAdmin extends javax.swing.JPanel {
     
     public PanelAdmin() {
         initComponents();
-        LOGO.setIcon(new ImageIcon(getClass().getResource("/Imagenes/LOGO2.png")));
+        
         usuariosSub1.setVisible(false);
         usuariosSub.setVisible(false);
         contEdit.setVisible(false);
+        logUser.setIcon(new ImageIcon(getClass().getResource("/Imagenes/uSER.png")));
+        lblcomidalog.setIcon(new ImageIcon(getClass().getResource("/Imagenes/COmida log.png")));
     }
 
     /**
@@ -49,7 +51,6 @@ public class PanelAdmin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        LOGO = new javax.swing.JLabel();
         Registro = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         userName = new javax.swing.JTextField();
@@ -58,6 +59,7 @@ public class PanelAdmin extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         contra = new javax.swing.JTextField();
         registrarbuttom = new javax.swing.JButton();
+        logUser = new javax.swing.JLabel();
         Edicion = new javax.swing.JDialog();
         jLabel4 = new javax.swing.JLabel();
         person = new javax.swing.JTextField();
@@ -80,6 +82,7 @@ public class PanelAdmin extends javax.swing.JPanel {
         boxTipo = new javax.swing.JComboBox<>();
         btnAgregar = new javax.swing.JButton();
         textID = new javax.swing.JSpinner();
+        lblcomidalog = new javax.swing.JLabel();
         comidaEdit = new javax.swing.JDialog();
         jLabel10 = new javax.swing.JLabel();
         bnombre = new javax.swing.JTextField();
@@ -122,9 +125,8 @@ public class PanelAdmin extends javax.swing.JPanel {
         btnEditar1 = new javax.swing.JLabel();
         btnMostrar1 = new javax.swing.JLabel();
 
-        LOGO.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
         Registro.setTitle("Registro de Usuarios");
+        Registro.setBackground(new java.awt.Color(255, 204, 51));
         Registro.setMinimumSize(new java.awt.Dimension(400, 400));
         Registro.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -152,14 +154,21 @@ public class PanelAdmin extends javax.swing.JPanel {
             .addGroup(RegistroLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(registrarbuttom)
-                    .addComponent(jLabel1)
-                    .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(registrarbuttom))
+                        .addContainerGap(241, Short.MAX_VALUE))
+                    .addGroup(RegistroLayout.createSequentialGroup()
+                        .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logUser, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))))
         );
         RegistroLayout.setVerticalGroup(
             RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,18 +176,23 @@ public class PanelAdmin extends javax.swing.JPanel {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(RegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RegistroLayout.createSequentialGroup()
+                        .addComponent(userName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RegistroLayout.createSequentialGroup()
+                        .addComponent(logUser, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
                 .addGap(26, 26, 26)
                 .addComponent(registrarbuttom)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         Edicion.setTitle("Editar Usuario");
@@ -264,7 +278,7 @@ public class PanelAdmin extends javax.swing.JPanel {
                     .addGroup(EdicionLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(contEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         EdicionLayout.setVerticalGroup(
             EdicionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,7 +291,7 @@ public class PanelAdmin extends javax.swing.JPanel {
                     .addComponent(btnBuscar))
                 .addGap(18, 18, 18)
                 .addComponent(contEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         Comidas.setTitle("Comidas");
@@ -319,14 +333,18 @@ public class PanelAdmin extends javax.swing.JPanel {
                     .addComponent(btnAgregar)
                     .addComponent(boxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(label3)
-                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(ComidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(textID, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(spinPrecio, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(textNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)))
-                .addContainerGap(103, Short.MAX_VALUE))
+                    .addGroup(ComidasLayout.createSequentialGroup()
+                        .addGroup(ComidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(label3)
+                            .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ComidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(textID, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(spinPrecio, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(textNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)))
+                        .addGap(99, 99, 99)
+                        .addComponent(lblcomidalog, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         ComidasLayout.setVerticalGroup(
             ComidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,21 +353,26 @@ public class PanelAdmin extends javax.swing.JPanel {
                 .addComponent(jLabel8)
                 .addGap(7, 7, 7)
                 .addComponent(textID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(label3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(spinPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(label4)
+                .addGroup(ComidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ComidasLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(label3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(spinPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(label4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ComidasLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblcomidalog, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAgregar)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         comidaEdit.setMinimumSize(new java.awt.Dimension(350, 400));
@@ -553,29 +576,41 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        ContendorMenus.setBackground(new java.awt.Color(255, 255, 255));
+        ContendorMenus.setBackground(new java.awt.Color(255, 204, 51));
         ContendorMenus.setForeground(new java.awt.Color(255, 204, 153));
         ContendorMenus.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCerrarSesion.setText("Cerrar Sesion");
+        btnCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCerrarSesionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCerrarSesionMouseExited(evt);
+            }
+        });
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        ContendorMenus.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, -1, -1));
+        ContendorMenus.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, -1, -1));
 
         labelComida.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         labelComida.setText("Alimentos");
+        labelComida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         labelComida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 labelComidaMousePressed(evt);
             }
         });
-        ContendorMenus.add(labelComida, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+        ContendorMenus.add(labelComida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        usuariosSub.setBackground(new java.awt.Color(255, 255, 255));
 
         btRegistro.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btRegistro.setText("Registrar");
+        btRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btRegistroMousePressed(evt);
@@ -584,6 +619,7 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         btnEliminar.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btnEliminar.setText("Eliminar");
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnEliminarMousePressed(evt);
@@ -592,6 +628,14 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         exitU.setFont(new java.awt.Font("Liberation Sans", 0, 10)); // NOI18N
         exitU.setText("Salir");
+        exitU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitUMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitUMouseExited(evt);
+            }
+        });
         exitU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitUActionPerformed(evt);
@@ -600,6 +644,7 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         btnEditar.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btnEditar.setText("Editar");
+        btnEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnEditarMousePressed(evt);
@@ -608,6 +653,7 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         btnMostrar.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btnMostrar.setText("Mostrar");
+        btnMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnMostrarMousePressed(evt);
@@ -648,19 +694,23 @@ public class PanelAdmin extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        ContendorMenus.add(usuariosSub, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 80, -1));
+        ContendorMenus.add(usuariosSub, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 80, -1));
 
         lblUsuario.setFont(new java.awt.Font("Open Sans", 1, 24)); // NOI18N
         lblUsuario.setText("Usuarios");
+        lblUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblUsuarioMousePressed(evt);
             }
         });
-        ContendorMenus.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+        ContendorMenus.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
+
+        usuariosSub1.setBackground(new java.awt.Color(255, 255, 255));
 
         btRegistro1.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btRegistro1.setText("Registrar");
+        btRegistro1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btRegistro1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btRegistro1MousePressed(evt);
@@ -669,6 +719,7 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         btnEliminar1.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btnEliminar1.setText("Eliminar");
+        btnEliminar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnEliminar1MousePressed(evt);
@@ -677,6 +728,14 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         exitU1.setFont(new java.awt.Font("Liberation Sans", 0, 10)); // NOI18N
         exitU1.setText("Salir");
+        exitU1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitU1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitU1MouseExited(evt);
+            }
+        });
         exitU1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitU1ActionPerformed(evt);
@@ -685,6 +744,7 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         btnEditar1.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btnEditar1.setText("Editar");
+        btnEditar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEditar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnEditar1MousePressed(evt);
@@ -693,6 +753,7 @@ public class PanelAdmin extends javax.swing.JPanel {
 
         btnMostrar1.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
         btnMostrar1.setText("Mostrar");
+        btnMostrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMostrar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnMostrar1MousePressed(evt);
@@ -801,7 +862,7 @@ public class PanelAdmin extends javax.swing.JPanel {
         user.setText("");
         contra.setText("");
         proyecto.login.nuevomodel();
-        
+        JOptionPane.showMessageDialog(this, "Usuario Registrado con exito");
     }//GEN-LAST:event_registrarbuttomActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -826,6 +887,7 @@ public class PanelAdmin extends javax.swing.JPanel {
         editContra.setText("");
         person.setText("");
         i=-1;
+        JOptionPane.showMessageDialog(this, "Usuario Actualizado");
     }//GEN-LAST:event_btnEditActionPerformed
 
     
@@ -998,6 +1060,30 @@ public class PanelAdmin extends javax.swing.JPanel {
         Mennus.setVisible(false);
         
     }//GEN-LAST:event_btnaTRASMousePressed
+//Evento donde el mouse entra y sale del boton (Interfaz)
+    private void exitUMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitUMouseEntered
+        exitU.setBackground(Color.red);
+    }//GEN-LAST:event_exitUMouseEntered
+
+    private void exitUMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitUMouseExited
+        exitU.setBackground(Color.white);
+    }//GEN-LAST:event_exitUMouseExited
+
+    private void exitU1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitU1MouseEntered
+        exitU1.setBackground(Color.red);
+    }//GEN-LAST:event_exitU1MouseEntered
+
+    private void exitU1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitU1MouseExited
+        exitU1.setBackground(Color.white);
+    }//GEN-LAST:event_exitU1MouseExited
+
+    private void btnCerrarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMouseEntered
+        btnCerrarSesion.setBackground(Color.red);
+    }//GEN-LAST:event_btnCerrarSesionMouseEntered
+
+    private void btnCerrarSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMouseExited
+        btnCerrarSesion.setBackground(Color.white);
+    }//GEN-LAST:event_btnCerrarSesionMouseExited
 
     
     
@@ -1013,7 +1099,6 @@ public class PanelAdmin extends javax.swing.JPanel {
     private javax.swing.JDialog Comidas;
     private javax.swing.JPanel ContendorMenus;
     private javax.swing.JDialog Edicion;
-    private javax.swing.JLabel LOGO;
     private javax.swing.JDialog Mennus;
     private javax.swing.JDialog MostrarUser;
     private javax.swing.JDialog Registro;
@@ -1065,6 +1150,8 @@ public class PanelAdmin extends javax.swing.JPanel {
     private javax.swing.JLabel label4;
     private javax.swing.JLabel labelComida;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JLabel lblcomidalog;
+    private javax.swing.JLabel logUser;
     private javax.swing.JSpinner nuevoID;
     private javax.swing.JTextField nuevoNombre;
     private javax.swing.JSpinner nuevoPrecio;

@@ -34,11 +34,12 @@ public class login extends javax.swing.JFrame {
     }
     
     public login() {
+        
         initComponents();
         
-        LOGO.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Pollo.png")));
+        
         nuevomodel();
-
+        LOGO.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Pollo LOgO.png")));
     }
 
    
@@ -80,7 +81,7 @@ public class login extends javax.swing.JFrame {
         Plog.setBackground(new java.awt.Color(255, 255, 255));
         Plog.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        PinicLogo.setBackground(new java.awt.Color(255, 204, 102));
+        PinicLogo.setBackground(new java.awt.Color(255, 204, 51));
 
         LOGO.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -89,16 +90,16 @@ public class login extends javax.swing.JFrame {
         PinicLogoLayout.setHorizontalGroup(
             PinicLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PinicLogoLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         PinicLogoLayout.setVerticalGroup(
             PinicLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PinicLogoLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addGap(89, 89, 89)
+                .addComponent(LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         Plog.add(PinicLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, -10, 460, 581));
@@ -130,7 +131,7 @@ public class login extends javax.swing.JFrame {
         lblContraseña.setText("Contraseña");
         Plog.add(lblContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 121, 25));
 
-        PinicioSesion.setBackground(new java.awt.Color(255, 204, 102));
+        PinicioSesion.setBackground(new java.awt.Color(255, 204, 51));
         PinicioSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PinicioSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {

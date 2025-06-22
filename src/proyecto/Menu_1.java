@@ -4,7 +4,9 @@
  */
 package proyecto;
 
+import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -31,6 +33,7 @@ public class Menu_1 extends javax.swing.JPanel {
         
         initComponents();
         actualizarMenu();
+        lbllogito.setIcon(new ImageIcon(getClass().getResource("/Imagenes/Logito.png")));
     }
 
     /**
@@ -45,7 +48,22 @@ public class Menu_1 extends javax.swing.JPanel {
         DialogTicket = new javax.swing.JDialog();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtTicket = new javax.swing.JTextArea();
-        Atrasbtn = new javax.swing.JLabel();
+        DialogPedidosConsul = new javax.swing.JDialog();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        TickePed1 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        TickePed2 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        TickePed3 = new javax.swing.JTextArea();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        TickePed4 = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        TickePed5 = new javax.swing.JTextArea();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        TickePed6 = new javax.swing.JTextArea();
+        btnCerrarP = new javax.swing.JLabel();
+        btnVaciar = new javax.swing.JButton();
+        lbllogito = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DefaultTableModel modelo = new DefaultTableModel(
             new String[]{"Nombre", "Precio", ""}, 0
@@ -62,11 +80,16 @@ public class Menu_1 extends javax.swing.JPanel {
         comTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         pedTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        lblTotal = new javax.swing.JLabel();
         totLabel = new javax.swing.JLabel();
         btnPedido = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lblbtnPedido = new javax.swing.JLabel();
+        btnPedidoss = new javax.swing.JPanel();
+        lblPedidoss = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JPanel();
+        Atrasbtn = new javax.swing.JLabel();
+
+        DialogTicket.setResizable(false);
 
         txtTicket.setColumns(20);
         txtTicket.setRows(5);
@@ -89,12 +112,99 @@ public class Menu_1 extends javax.swing.JPanel {
                 .addContainerGap(74, Short.MAX_VALUE))
         );
 
-        Atrasbtn.setText("Cerrar Sesion");
-        Atrasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+        DialogPedidosConsul.setResizable(false);
+
+        TickePed1.setColumns(20);
+        TickePed1.setRows(5);
+        jScrollPane4.setViewportView(TickePed1);
+
+        TickePed2.setColumns(20);
+        TickePed2.setRows(5);
+        jScrollPane5.setViewportView(TickePed2);
+
+        TickePed3.setColumns(20);
+        TickePed3.setRows(5);
+        jScrollPane6.setViewportView(TickePed3);
+
+        TickePed4.setColumns(20);
+        TickePed4.setRows(5);
+        jScrollPane7.setViewportView(TickePed4);
+
+        TickePed5.setColumns(20);
+        TickePed5.setRows(5);
+        jScrollPane8.setViewportView(TickePed5);
+
+        TickePed6.setColumns(20);
+        TickePed6.setRows(5);
+        jScrollPane9.setViewportView(TickePed6);
+
+        btnCerrarP.setText("CERRAR");
+        btnCerrarP.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                AtrasbtnMousePressed(evt);
+                btnCerrarPMousePressed(evt);
             }
         });
+
+        btnVaciar.setText("Vaciar");
+        btnVaciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVaciarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout DialogPedidosConsulLayout = new javax.swing.GroupLayout(DialogPedidosConsul.getContentPane());
+        DialogPedidosConsul.getContentPane().setLayout(DialogPedidosConsulLayout);
+        DialogPedidosConsulLayout.setHorizontalGroup(
+            DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DialogPedidosConsulLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCerrarP, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVaciar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(DialogPedidosConsulLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49))
+        );
+        DialogPedidosConsulLayout.setVerticalGroup(
+            DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DialogPedidosConsulLayout.createSequentialGroup()
+                .addGroup(DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DialogPedidosConsulLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5)
+                            .addComponent(jScrollPane6)))
+                    .addGroup(DialogPedidosConsulLayout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(btnCerrarP, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DialogPedidosConsulLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(DialogPedidosConsulLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                            .addComponent(jScrollPane9)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DialogPedidosConsulLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVaciar)
+                        .addGap(142, 142, 142))))
+        );
+
+        setBackground(new java.awt.Color(255, 204, 51));
 
         comTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object[][][] {},
@@ -122,8 +232,9 @@ public class Menu_1 extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(pedTable);
 
-        jLabel1.setText("Total:");
+        lblTotal.setText("Total:");
 
+        btnPedido.setBackground(new java.awt.Color(255, 204, 51));
         btnPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPedido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -131,75 +242,137 @@ public class Menu_1 extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Serif Condensed", 0, 15)); // NOI18N
-        jLabel2.setText("Hacer Pedido");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblbtnPedido.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 15)); // NOI18N
+        lblbtnPedido.setText("  Hacer Pedido");
+        lblbtnPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblbtnPedido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblbtnPedidoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblbtnPedidoMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblbtnPedidoMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnPedidoLayout = new javax.swing.GroupLayout(btnPedido);
         btnPedido.setLayout(btnPedidoLayout);
         btnPedidoLayout.setHorizontalGroup(
             btnPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPedidoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(24, Short.MAX_VALUE))
+            .addComponent(lblbtnPedido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
         );
         btnPedidoLayout.setVerticalGroup(
             btnPedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnPedidoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(lblbtnPedido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
         );
 
-        jButton1.setText("Pedidos");
+        btnPedidoss.setBackground(new java.awt.Color(255, 204, 51));
+
+        lblPedidoss.setFont(new java.awt.Font("DejaVu Sans Condensed", 1, 15)); // NOI18N
+        lblPedidoss.setText("      Pedidos");
+        lblPedidoss.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblPedidossMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblPedidossMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblPedidossMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnPedidossLayout = new javax.swing.GroupLayout(btnPedidoss);
+        btnPedidoss.setLayout(btnPedidossLayout);
+        btnPedidossLayout.setHorizontalGroup(
+            btnPedidossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblPedidoss, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+        );
+        btnPedidossLayout.setVerticalGroup(
+            btnPedidossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblPedidoss, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+        );
+
+        btnCerrar.setBackground(new java.awt.Color(255, 204, 51));
+
+        Atrasbtn.setFont(new java.awt.Font("DejaVu Sans Condensed", 1, 15)); // NOI18N
+        Atrasbtn.setText("  Cerrar Sesion");
+        Atrasbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AtrasbtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AtrasbtnMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                AtrasbtnMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btnCerrarLayout = new javax.swing.GroupLayout(btnCerrar);
+        btnCerrar.setLayout(btnCerrarLayout);
+        btnCerrarLayout.setHorizontalGroup(
+            btnCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Atrasbtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+        );
+        btnCerrarLayout.setVerticalGroup(
+            btnCerrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Atrasbtn, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jButton1)
-                .addGap(126, 126, 126)
-                .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(totLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Atrasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPedidoss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbllogito, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                        .addComponent(lblTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(totLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                                .addComponent(totLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(Atrasbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                        .addComponent(totLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton1))
+                        .addComponent(lbllogito, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPedidoss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //Evento que realiza cuando se clickea
     private void comTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comTableMouseClicked
         int fila = comTable.rowAtPoint(evt.getPoint());
         int columna = comTable.columnAtPoint(evt.getPoint());
@@ -213,7 +386,7 @@ public class Menu_1 extends javax.swing.JPanel {
             totLabel.setText(String.valueOf(sum));
         }
     }//GEN-LAST:event_comTableMouseClicked
-
+    //Evento que realiza cuando se clickea
     private void pedTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pedTableMouseClicked
         int fila = pedTable.rowAtPoint(evt.getPoint());
         int columna = pedTable.columnAtPoint(evt.getPoint());
@@ -229,13 +402,9 @@ public class Menu_1 extends javax.swing.JPanel {
     }//GEN-LAST:event_pedTableMouseClicked
 
     private void btnPedidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPedidoMousePressed
-        DialogTicket.setBounds(0,0,371,460);
-        DialogTicket.setVisible(true);
-        txtTicket.setText(Ticket(pedTable));
-        
-//        modelpedTable.setRowCount(0);
+      
     }//GEN-LAST:event_btnPedidoMousePressed
-
+    //Evento que realiza cuando se presiona
     private void AtrasbtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AtrasbtnMousePressed
         JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
         frame.getContentPane().removeAll();
@@ -243,11 +412,79 @@ public class Menu_1 extends javax.swing.JPanel {
         new login().setVisible(true);
        
     }//GEN-LAST:event_AtrasbtnMousePressed
+    //Evento que realiza cuando se presiona
+    private void btnCerrarPMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarPMousePressed
+      DialogPedidosConsul.setVisible(false);
+    }//GEN-LAST:event_btnCerrarPMousePressed
+    //Cuando el boton vaciar los pedidos se borran
+    private void btnVaciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVaciarActionPerformed
+         TickePed1.setText("");
+         TickePed2.setText("");
+         TickePed3.setText("");
+         TickePed4.setText("");
+         TickePed5.setText("");
+         TickePed6.setText("");
+    }//GEN-LAST:event_btnVaciarActionPerformed
+    // los evt de entered o exited es para diseño de el boton cuando el cursor pasa encima o sale de el
+    private void AtrasbtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AtrasbtnMouseEntered
+        btnCerrar.setBackground(Color.red);
+    }//GEN-LAST:event_AtrasbtnMouseEntered
+
+    private void AtrasbtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AtrasbtnMouseExited
+        btnCerrar.setBackground(new Color(255,204,51));
+    }//GEN-LAST:event_AtrasbtnMouseExited
+
+    private void lblPedidossMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPedidossMouseEntered
+         btnPedidoss.setBackground(new Color(255,153,51));
+    }//GEN-LAST:event_lblPedidossMouseEntered
+
+    private void lblPedidossMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPedidossMouseExited
+        btnPedidoss.setBackground(new Color(255,204,51));
+    }//GEN-LAST:event_lblPedidossMouseExited
+
+    private void lblPedidossMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPedidossMousePressed
+       DialogPedidosConsul.setBounds(0,0,891,590);
+        DialogPedidosConsul.setVisible(true);
+    }//GEN-LAST:event_lblPedidossMousePressed
+
+    private void lblbtnPedidoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblbtnPedidoMouseEntered
+        lblbtnPedido.setBackground(new Color(255,153,51));
+    }//GEN-LAST:event_lblbtnPedidoMouseEntered
+
+    private void lblbtnPedidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblbtnPedidoMouseExited
+        lblbtnPedido.setBackground(new Color(255,204,51));
+    }//GEN-LAST:event_lblbtnPedidoMouseExited
+    //Evento que realiza cuando se presiona
+    private void lblbtnPedidoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblbtnPedidoMousePressed
+          DialogTicket.setBounds(0,0,371,460);
+        DialogTicket.setVisible(true);
+        txtTicket.setText(Ticket(pedTable));
+        if (TickePed1.getText().isEmpty()) {
+        TickePed1.setText(Ticket(pedTable));
+    } else if (TickePed2.getText().isEmpty()) {
+        TickePed2.setText(Ticket(pedTable));
+    } else if (TickePed3.getText().isEmpty()) {
+        TickePed3.setText(Ticket(pedTable));
+    } else if (TickePed4.getText().isEmpty()) {
+        TickePed4.setText(Ticket(pedTable));
+    } else if (TickePed5.getText().isEmpty()) {
+        TickePed5.setText(Ticket(pedTable));
+    } else if(TickePed6.getText().isEmpty()) {
+        TickePed6.setText(Ticket(pedTable));
+    }else{
+        JOptionPane.showMessageDialog(this, "No hay espacio para más tickets.");
+    }
+
+
+     DefaultTableModel model = (DefaultTableModel) pedTable.getModel();
+        model.setRowCount(0); // Esto borra todas las filas de la tabla
+    }//GEN-LAST:event_lblbtnPedidoMousePressed
 
     public void agregar(String nombre, Double precio) {
         DefaultTableModel modelo = (DefaultTableModel) pedTable.getModel();
         modelo.addRow(new Object[]{nombre, precio, "Eliminar"});
     }
+    //Actualiza el menu que se mostrara al cliente
     private void actualizarMenu() {
     DefaultTableModel model = (DefaultTableModel) comTable.getModel();
     model.setRowCount(0); // Limpia la tabla
@@ -344,15 +581,33 @@ public class Menu_1 extends javax.swing.JPanel {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Atrasbtn;
+    private javax.swing.JDialog DialogPedidosConsul;
     private javax.swing.JDialog DialogTicket;
+    private javax.swing.JTextArea TickePed1;
+    private javax.swing.JTextArea TickePed2;
+    private javax.swing.JTextArea TickePed3;
+    private javax.swing.JTextArea TickePed4;
+    private javax.swing.JTextArea TickePed5;
+    private javax.swing.JTextArea TickePed6;
+    private javax.swing.JPanel btnCerrar;
+    private javax.swing.JLabel btnCerrarP;
     private javax.swing.JPanel btnPedido;
+    private javax.swing.JPanel btnPedidoss;
+    private javax.swing.JButton btnVaciar;
     private javax.swing.JTable comTable;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JLabel lblPedidoss;
+    private javax.swing.JLabel lblTotal;
+    private javax.swing.JLabel lblbtnPedido;
+    private javax.swing.JLabel lbllogito;
     private javax.swing.JTable pedTable;
     private javax.swing.JLabel totLabel;
     private javax.swing.JTextArea txtTicket;
