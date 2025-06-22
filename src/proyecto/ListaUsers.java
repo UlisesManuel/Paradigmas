@@ -26,6 +26,14 @@ public class ListaUsers  {
     }
     return -1;
     }
+      public static boolean existeUsuario(String username) {
+    for (Usuario u : UsuariosLista) {
+        if (u.Usuario.equals(username)) {
+            return true;
+        }
+    }
+    return false;
+}
     public static boolean validarLogin(String usuario, String contraseña) {
     for (Usuario u : UsuariosLista) {
         if (u.getUsuario().equals(usuario) && u.getContraseña().equals(contraseña)) {
@@ -38,7 +46,14 @@ public class ListaUsers  {
     public static void nuevaComida(int id,String nombre,double precio,String tipo){
         comidaList.add(new Comida(id,nombre,precio,tipo));
     }
-    
+    public static boolean existeComidaIDyTipo(int id, String tipo) {
+    for (Comida c : comidaList) {
+        if (c.getId() == id && c.getTipo().equalsIgnoreCase(tipo)) {
+            return true;
+        }
+    }
+    return false;
+}
     public static int validarComida(String nom) {
     for (int i = 0; i < comidaList.size(); i++) {
         if (comidaList.get(i).nombre.equals(nom)) {

@@ -17,7 +17,7 @@ public class Pedidos {
 
     public void agregar(String comida, Double precio) {
         pedido.add(new AbstractMap.SimpleEntry<>(comida, precio));
-        sum();
+        
     }
 
     public void eliminar(String comida) {
@@ -46,6 +46,9 @@ public class Pedidos {
         return tot;
     }
     
-    
+    public void limpiar(){
+        pedido.clear();
+        tot=0;
+    }
 
 }

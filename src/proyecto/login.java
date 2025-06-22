@@ -146,11 +146,17 @@ public class login extends javax.swing.JFrame {
         });
 
         lblint.setFont(new java.awt.Font("DejaVu Math TeX Gyre", 1, 15)); // NOI18N
-        lblint.setText("Iniciar Sesion");
+        lblint.setText("    Iniciar Sesion");
         lblint.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblint.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblintMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblintMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblintMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblintMousePressed(evt);
@@ -161,10 +167,7 @@ public class login extends javax.swing.JFrame {
         PinicioSesion.setLayout(PinicioSesionLayout);
         PinicioSesionLayout.setHorizontalGroup(
             PinicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PinicioSesionLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblint)
-                .addContainerGap(40, Short.MAX_VALUE))
+            .addComponent(lblint, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
         );
         PinicioSesionLayout.setVerticalGroup(
             PinicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,16 +203,29 @@ public class login extends javax.swing.JFrame {
 //new Color(255,204,102)
 //[255,153,51]
     private void PinicioSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PinicioSesionMouseEntered
-        PinicioSesion.setBackground(new Color(255,153,51));
-        lblint.setForeground(Color.white);
+        
     }//GEN-LAST:event_PinicioSesionMouseEntered
 
     private void PinicioSesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PinicioSesionMouseExited
-        PinicioSesion.setBackground(new Color(255,204,102));
-        lblint.setForeground(Color.BLACK);
+        
     }//GEN-LAST:event_PinicioSesionMouseExited
 
     private void PinicioSesionMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PinicioSesionMousePressed
+
+
+    
+        
+    }//GEN-LAST:event_PinicioSesionMousePressed
+
+    private void ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ContraseñaActionPerformed
+
+    private void lblintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblintMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblintMouseClicked
+
+    private void lblintMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblintMousePressed
     String admin = USER.getSelectedItem().toString();
     String contra = String.valueOf(Contraseña.getPassword());
 
@@ -240,22 +256,17 @@ public class login extends javax.swing.JFrame {
     } else {
         JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrectos");
     }
-
-    
-        
-    }//GEN-LAST:event_PinicioSesionMousePressed
-
-    private void ContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ContraseñaActionPerformed
-
-    private void lblintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblintMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblintMouseClicked
-
-    private void lblintMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblintMousePressed
-    
     }//GEN-LAST:event_lblintMousePressed
+
+    private void lblintMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblintMouseEntered
+        PinicioSesion.setBackground(new Color(255,153,51));
+        lblint.setForeground(Color.white);
+    }//GEN-LAST:event_lblintMouseEntered
+
+    private void lblintMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblintMouseExited
+        PinicioSesion.setBackground(new Color(255,204,102));
+        lblint.setForeground(Color.BLACK);
+    }//GEN-LAST:event_lblintMouseExited
 //    public static void borrauno(){
 //        
 //    }

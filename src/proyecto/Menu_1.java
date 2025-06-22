@@ -15,6 +15,12 @@ import javax.swing.table.DefaultTableModel;
 import proyecto.Comida;
 import proyecto.ListaUsers;
 import static proyecto.ListaUsers.UsuariosLista;
+import static proyecto.PanelAdmin.VentaTa;
+import proyecto.Venta;
+import static proyecto.PanelAdmin.cargarVentasEnTabla;
+import proyecto.Pedidos.*;
+
+
 
 /**
  *
@@ -474,10 +480,13 @@ public class Menu_1 extends javax.swing.JPanel {
     }else{
         JOptionPane.showMessageDialog(this, "No hay espacio para más tickets.");
     }
-
-
-     DefaultTableModel model = (DefaultTableModel) pedTable.getModel();
-        model.setRowCount(0); // Esto borra todas las filas de la tabla
+     DefaultTableModel modeloPedido = (DefaultTableModel) pedTable.getModel();
+    modeloPedido.setRowCount(0);
+       
+        double totalPedido = pedidos.res();
+    Venta nuevaVenta = new Venta(totalPedido);
+    totLabel.setText("0.00");
+    pedidos.limpiar();
     }//GEN-LAST:event_lblbtnPedidoMousePressed
 
     public void agregar(String nombre, Double precio) {
